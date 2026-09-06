@@ -51,16 +51,14 @@ public class Patient extends Person {
         System.out.println(super.toString());
         System.out.println("Patient ID: " + patientID + ", Blood Group: " + bloodGroup
                 + ", Registration Date: " + registrationDate
-                + ", Total Reports: " + reportIDs.size());
+                 + ", Total Reports: " + reportIDs.size());
     }
-
 
     public void login() {
-    }
 
+    }
     public void viewReport() {
     }
-
     public void viewReport(String reportID) {
     }
     public void viewHistory() {

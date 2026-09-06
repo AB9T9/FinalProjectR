@@ -55,7 +55,7 @@ public class Doctor extends Person implements Trackable {
     public String getStatus() {
         return "Dr. " + doctorName + " has " + pendingReportCount + " pending report(s)";
     }
-
+  
   // in phase 3/4....................
     public void login() {
     }

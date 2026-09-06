@@ -33,14 +33,10 @@ public class SeniorDoctor extends Doctor {
         System.out.println("Years of Experience: " + yearsOfExperience
                 + ", Consultation Fee: " + consultationFee);
     }
-
-    
     @Override
     public String getStatus() {
         return super.getStatus() + " (Senior, " + yearsOfExperience + " yrs experience)";
     }
-
-    
     public void approveDischarge() {
    
     }
