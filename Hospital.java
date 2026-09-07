@@ -80,6 +80,19 @@ public void updateReport(String reportID, String result, String status) {
         }
     }
 
+ public void addPrescription(String reportID, String medicine, String dosage, String days, String advice) {
+        String[] r = reports.get(reportID);
+        if (r != null) {
+            r[6] = medicine;
+            r[7] = dosage;
+            r[8] = days;
+            r[9] = advice;
+        }
+    }
+    
+
+
+
     @Override
     public String getStatus() {
         
