@@ -89,7 +89,10 @@ public void updateReport(String reportID, String result, String status) {
             r[9] = advice;
         }
     }
-    
+    //report search 
+        public String[] searchReport(String reportID) {
+        return reports.get(reportID);
+    }
 
 
 
