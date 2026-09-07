@@ -56,7 +56,22 @@ public Patient patientLogin(String patientId,String password) throws InvalidPati
     }
     return p;
 }
-
+public String createReport(String doctorID,String patientID,String testName)
+{
+    String reportID = "Report" + (reports.size()+1);
+    String data [] = {patientID,doctorID,testName,"",java.time.LocalDateTime.now().toString(),
+        "Pending","","","","","false"
+    };
+    reports.put(reportID, data);
+    try {
+        Patient p = searchPatient(patientID);
+        p.addReportID(reportID);
+    } catch (InvalidPatientException e) {
+        System.out.println("Warning "+e.getMessage());
+    }
+    return reportID;
+    
+}
     
 
     @Override
