@@ -72,7 +72,13 @@ public String createReport(String doctorID,String patientID,String testName)
     return reportID;
     
 }
-    
+public void updateReport(String reportID, String result, String status) {
+        String[] r = reports.get(reportID);
+        if (r != null) {
+            r[3] = result;
+            r[5] = status;
+        }
+    }
 
     @Override
     public String getStatus() {
