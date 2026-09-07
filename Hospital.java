@@ -93,7 +93,24 @@ public void updateReport(String reportID, String result, String status) {
         public String[] searchReport(String reportID) {
         return reports.get(reportID);
     }
-
+    public void displayReport(String reportID) {
+        String[] r = reports.get(reportID);
+        if (r == null) {
+            System.out.println("Report not found: " + reportID);
+            return;
+        }
+        System.out.println("Report " + reportID
+                + " | Patient: " + r[0]
+                + " | Doctor: " + r[1]
+                + " | Test: " + r[2]
+                + " | Result: " + r[3]
+                + " | Date: " + r[4]
+                + " | Status: " + r[5]
+                + " | Medicine: " + r[6] + " " + r[7]
+                + " | Days: " + r[8]
+                + " | Advice: " + r[9]
+                + " | Read: " + r[10]);
+    }
 
 
     @Override
