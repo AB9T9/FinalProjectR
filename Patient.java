@@ -54,12 +54,17 @@ public class Patient extends Person {
                  + ", Total Reports: " + reportIDs.size());
     }
 
-    public void login() {
-
+    public Patient login(Hospital hospital,String password) throws InvalidPatientException{
+        return hospital.patientLogin(this.patientID, password);
     }
-    public void viewReport() {
+    public void viewReport(Hospital hospital) {
+        for(String id:reportIDs)
+        {
+            hospital.displayReport(id);
+        }
     }
     public void viewReport(String reportID) {
+        
     }
     public void viewHistory() {
     }
