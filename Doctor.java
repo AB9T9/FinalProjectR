@@ -57,9 +57,11 @@ public class Doctor extends Person implements Trackable {
     }
   
   // in phase 3/4....................
-    public void login() {
+    public Doctor login(Hospital hospital) {
+        return hospital.doctorLogin(this.doctorID);
     }
-    public void addPatient() {
+    public void addPatient(Hospital hospital,Patient p) {
+        hospital.addPatient(p);
     }
     public void createReport() {
     }
