@@ -63,7 +63,10 @@ public class Doctor extends Person implements Trackable {
     public void addPatient(Hospital hospital,Patient p) {
         hospital.addPatient(p);
     }
-    public void createReport() {
+    public String  createReport(Hospital hospital,String patientID,String testName) {
+    String reportID=hospital.createReport(this.doctorID,patientID,testName);
+    this.pendingReportCount++;
+    return reportID;
     }
     public void uploadReport() {
     }
