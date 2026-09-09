@@ -112,11 +112,25 @@ public void updateReport(String reportID, String result, String status) {
                 + " | Read: " + r[10]);
     }
 
-
     @Override
     public String getStatus() {
-        
-        return null;
+        int patientCount = 0;
+        for (Person p : people) {
+            if (p instanceof Patient) patientCount++;
+        }
+        int totalReports = reports.size();
+        int pending = 0;
+        for (String[] r : reports.values()) {
+            if (r[5].equals("Pending") || r[5].equals("Processing")) pending++;
+        }
+        int completed = totalReports - pending;
+        return patientCount + " patients, " + totalReports + " reports total ("
+                + pending + " pending, " + completed + " completed)";
     }
+
+    public ArrayList<Person> getPeople() {
+        return people;
+    }
+   
     
 }
