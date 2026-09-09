@@ -75,6 +75,7 @@ public class Doctor extends Person implements Trackable {
         pendingReportCount--;
     }
     }
-    public void writePrescription() {
+    public void writePrescription(Hospital hospital,String reportID,String medicine,String dosage ,String days,String advice) {
+        hospital.addPrescription(reportID,medicine,dosage,days,advice);
     }
 }
