@@ -68,7 +68,12 @@ public class Doctor extends Person implements Trackable {
     this.pendingReportCount++;
     return reportID;
     }
-    public void uploadReport() {
+    public void uploadReport(Hospital hospital,String reportID,String result) {
+    hospital.updateReport(reportID, result, "Completed");
+    if(this.pendingReportCount>0)
+    {
+        pendingReportCount--;
+    }
     }
     public void writePrescription() {
     }
