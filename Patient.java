@@ -9,7 +9,7 @@ public class Patient extends Person {
     private String bloodGroup;
     private String registrationDate;
     private ArrayList<String> reportIDs; // only reportID otheres in hospital Hasmap
-
+    private ArrayList <String> notifications;
     
     public Patient() {
         super();
@@ -18,6 +18,7 @@ public class Patient extends Person {
         this.bloodGroup = "Unknown";
         this.registrationDate = "N/A";
         this.reportIDs = new ArrayList<>();
+        this.notifications=new ArrayList<>();
     }
 
     public Patient(String name, int age, String gender, String phone, String address,
@@ -28,8 +29,17 @@ public class Patient extends Person {
         this.bloodGroup = bloodGroup;
         this.registrationDate = registrationDate;
         this.reportIDs = new ArrayList<>();
+        this.notifications=new ArrayList<>();
     }
 
+    public void addNotification(String message)
+    {
+        notifications.add(message);
+    }
+    public  ArrayList<String> getNotifications()
+    {
+        return notifications;
+    }
     public String getPatientID() { return patientID; }
     public void setPatientID(String patientID) { this.patientID = patientID; }
 
@@ -63,11 +73,14 @@ public class Patient extends Person {
             hospital.displayReport(id);
         }
     }
-    public void viewReport(String reportID) {
-        
+    public void viewReport(Hospital hospital,String reportID) {
+        hospital.displayReport(reportID);
     }
-    public void viewHistory() {
+    public void viewHistory(Hospital hospital) {
+          System.out.println("Report History for "+getName()+"( "+reportIDs.size()+" total ):");
+          viewReport(hospital);
     }
-    public void changePassword() {
+    public void changePassword(String newPassword) {
+        this.password=newPassword;
     }
 }

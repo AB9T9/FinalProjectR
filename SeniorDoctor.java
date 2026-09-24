@@ -37,7 +37,5 @@ public class SeniorDoctor extends Doctor {
     public String getStatus() {
         return super.getStatus() + " (Senior, " + yearsOfExperience + " yrs experience)";
     }
-    public void approveDischarge() {
-   
-    }
+    
 }
